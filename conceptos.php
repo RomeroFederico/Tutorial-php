@@ -118,7 +118,7 @@
 
 			if (is_array($variable))
 				echo 'variable : -array- <br>';
-			else if (is_object($variable))
+			elseif (is_object($variable))
 				echo 'variable : -objeto clase "' . get_class($variable) .'"- <br>';
 			else
 				echo 'variable : ' . $variable . '<br>';
@@ -211,7 +211,126 @@
 
 		// rand(min, max) -> Retorna un valor aleatorio entre min y max (inclusive).
 
-		echo rand(1, 10) . '<br';
+		echo rand(1, 10) . '<br>';
+
+		/* ---------------------------------------------- */
+
+		// PHP Constantes
+
+		// Variables que una vez definidas no pueden modificarse. Se indican comenzando con '_' o una letra, no utilizan '$'. Son de tipo global.
+
+		define('_NOMBRE', 'valor', false); // case-insensitive, default -> false. NOTA: YA NO ES SOPORTADO QUE SEA CASE-INSENSITIVE.
+
+		// _NOMBRE = 'nuevo valor'; // ERROR.
+
+		echo _NOMBRE . '<br>';
+
+		define('_ARRAY', ['valor1', 'valor2', 'valor3'], false);
+
+		echo _ARRAY[1] . '<br>'; // valor2 
+
+		function imprimir_array_constante() {
+
+			$retornar = 'Los valores del array son: <br>';
+
+			for ($i = 0; $i < count(_ARRAY); $i++) { // Se puede acceder a el sin utilizar 'global' o el array $GLOBALS.
+				$retornar = $retornar . 'indice : ' . $i . ' , valor : ' . _ARRAY[$i] . '<br>';
+			}
+
+			return $retornar;
+		}
+
+		echo imprimir_array_constante();
+
+		/* ---------------------------------------------- */
+
+		// OPERADORES
+
+		// ARITMETICOS:
+		// +	SUMA
+		// -	RESTA
+		// *	MULTIPLICACION
+		// /	DIVISION
+		// %	MODULO
+		// **	EXPONENCIAL	-> Eleva el primer numero al segundo (exponente).
+
+		// DE ASIGNACION:
+		// x = y	->	x = y
+		// x += y	->	x = x + y
+		// x -= y	->	x = x - y
+		// x *= y	->	x = x * y
+		// x /= y	->	x = x / y
+		// x %= y	->	x = x % y
+
+		// DE COMPARACION:
+		// ==	IGUAL
+		// ===	IDENTICO	
+		// !=	NO IGUAL
+		// <>	NO IGUAL
+		// !==	NO IDENTICO
+		// >	MAYOR A
+		// <	MENOR A
+		// >=	MAYOR O IGUAL A
+		// <=	MENOR O IGUAL A
+		// <=>	Spaceship	$x <=> $y -> RETORNA UN ENTERO DEPENDIENDO DE:	si x es menor a y -> < 0
+		//																	si x es mayor a y -> > 0
+		//																	si x es igual a y -> === 0
+
+		// INCREMENTALES/DECREMENTALES:
+		// ++$X -> INCREMENTA, LUEGO RETORNA $X.
+		// $X++ -> RETORNA $X, LUEGO INCREMENTA.
+		// --$X -> DECREMENTA, LUEGO RETORNA $X.
+		// $X-- -> RETORNA $X, LUEGO DECREMENTA.
+
+		// LOGICOS:
+		// and	AND	$x and $y
+		// or	OR	$x or $y
+		// xor	XOR	$x xor $y -> true si uno de los dos valores es true, pero no los dos al mismo tiempo.
+		// &&	AND	$x && $y
+		// ||	OR	$x || $y
+		// !	NOT !x
+
+		// OPERADORES DE STRINGS:
+		// . CONCATENACION.
+		// .= CONCATENACION CON ASIGNACION.
+
+		// OPERADORES DE ARRAYS:
+		// + UNION
+		// == IGUAL -> Si ambos arrays tienen los mismos pares de key/value.
+		// === IDENTICO -> Si ambos arrays tienen los mismos pares de key/value, en el mismo orden y del mismo tipo.
+		// != NO IGUAL
+		// <> NO IGUAL
+		// !== NO IDENTICO
+
+		// DE ASIGNACION CONDICIONAL
+		// ?: TERNARIO x === y ? 'nuevo valor' : 'otro valor';
+		// ?? NULL COALESCING x = $GLOBALS["color"] ?? 'red'; -> Aplica la primera expresion si existe y no es nula, caso contrario 'x' tomara el valor de la segunda expresion.
+
+		$PRUEBA_X = $GLOBALS["color"] ?? 'red';
+
+		$PRUEBA_Y = $PRUEBA_X ?? 'azul';
+
+		echo $PRUEBA_X . '<br>';
+		echo $PRUEBA_Y . '<br>';
+
+		/* ---------------------------------------------- */
+
+		// EXPRESIONES IF...ELSEIF...ELSE...SWITCH (IGUAL A JS)
+
+		// BUCLES WHILE...DO WHILE...FOR (IGUAL A JS)
+		// break y continue funcionan igual a JS.
+
+		$array_a_recorrer = [1, 2, 8, 10];
+		$array_a_recorrer_v2 = ['valor1' => 1, 'valor2' => 3, 'valor3' => 8, 'valor4' => 10];
+
+		foreach ($array_a_recorrer as $valor) { // Solo puede recorrer arrays.
+			echo $valor . '<br>';
+		}
+
+		foreach ($array_a_recorrer_v2 as $clave => $valor) { // Idem, pero permite visualizar los pares clave/valor.
+			echo $clave . ' => ' . $valor . '<br>';
+		}
+
 
 		?>
 
