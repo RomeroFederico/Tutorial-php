@@ -1,0 +1,106 @@
+body {
+	background-color: lightgreen;
+
+	justify-content: space-evenly !important;
+
+	height: 100vh;
+}
+
+input {
+	color: gray;
+}
+
+.otroColor {
+	background-color: darkred !important;
+}
+
+.fuente {
+	font-family: monospace;
+	font-weight: 700;
+	font-size: 15px;
+	color: white;
+}
+
+.centrar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.vertical {
+	flex-direction: column;
+}
+
+.divForm {
+	width: 300px;
+	height: 200px;
+
+	border: solid 3px white;
+
+	justify-content: space-evenly;
+
+	background-color: darkorange;
+}
+
+.masGrande {
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.masGrande span {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.masGrande .myButton {
+	margin: 10px;
+}
+
+.seleccionGenero {
+	justify-content: flex-start;
+}
+
+.error {
+	font-size: 10px;
+	color: goldenrod;
+}
+
+.spanNombre,
+.spanEmail,
+.spanWeb,
+.spanGenero,
+.seleccionGenero,
+input {
+	width: 200px;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #86ae47;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
