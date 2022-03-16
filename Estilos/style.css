@@ -6,8 +6,12 @@ body {
 	height: 100vh;
 }
 
-input {
+::placeholder {
 	color: gray;
+}
+
+input {
+	color: black;
 }
 
 .otroColor {
@@ -78,6 +82,10 @@ input {
 h3 {
 	margin: 0;
 	padding: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 .myButton {
