@@ -1,10 +1,13 @@
+<?php declare(strict_types=1); # Permite poner en modo estricto el codigo, los tipos de datos deben respetarse.
+?>
+
 <!DOCTYPE html>
 <html>
 	<body>
 
 		<h1>CONCEPTOS BASICOS DE PHP</h1>
 
-		<?php # Indica el comienzo de un bloque de codigo PHP.
+		<?php # Inicio de bloque de codigo PHP
 
 		echo '<br>'; // 'echo' imprime en pantalla, el navegador lo interpretara como codigo HTML.
 
@@ -331,6 +334,101 @@
 			echo $clave . ' => ' . $valor . '<br>';
 		}
 
+		/* ---------------------------------------------- */
+
+		// FUNCIONES
+
+		function saludar(string $nombre = "Federico") { // En modo estricto, si se indica el tipo de dato, no puede pasarse un valor de otro tipo.
+			echo "Hola " . $nombre . "<br>";			// En caso contrario, se convertiran los valores.
+		}
+
+		saludar(); // Si no se pasa nada como argumento se toma el por default.
+		saludar("Antonio");
+		#saludar(123); // ERROR
+
+		function sumar(int $x = 0, int $y = 0) : int { // Tambien se puede especificar el tipo de dato devuelto.
+			return (int)($x + $y); // Tambien se puede castear para que el retorno sea del tipo deseado.
+		}
+
+		echo sumar(3, 5) . "<br>";
+
+		$variable_a_pasar_con_referencia = 10;
+
+		function incrementar(int $variable) { // Al pasar una variable como argumento, se genera una copia de esta para usarse en la funcion.
+			$variable++;					  // Cualquier modificacion a la misma no afectara a la variable original.
+		}
+
+		function incrementar_por_referencia(int &$variable) { // Se puede pasar una referencia a la variable con el caracter '&'.
+			$variable++;									  // Cualquier modificacion a la misma afectara a la variable original.
+		}
+
+		incrementar($variable_a_pasar_con_referencia);
+
+		echo $variable_a_pasar_con_referencia . "<br>"; // 10
+
+		incrementar_por_referencia($variable_a_pasar_con_referencia);
+
+		echo $variable_a_pasar_con_referencia . "<br>"; // 11
+
+		/* ---------------------------------------------- */
+
+		// ARRAYS
+
+		// INDEXEADOS => Arreglos con indices numericos.
+		// ASOCIATIVOS => Arreglos con indices con palabras (key/value).
+		// MULTIDIMENSIONALES => Arreglos que contienen uno o mas arrays.
+
+		$almacen_de_frutas = ["PERA", "MANZANA", "BANANA"];
+		$almacen_de_frutas_V2 = [
+									"PERAS" => ["PERAS AMARILLAS", "PERAS ROJAS", "PERAS VERDES"] , 
+									"MANZANAS" => ["MANZANAS VERDES", "MANZANAS ROJAS"],
+									"BANANAS" => ["BANANAS"]
+								];
+
+		echo "Hay " . count($almacen_de_frutas) . " frutas almacenadas." . "<br>"; // Count devuelve la cantidad de elementos del array.
+		echo "Hay " . count($almacen_de_frutas_V2) . " frutas almacenadas." . "<br>"; // En caso de arrays anidados, cuenta el primer nivel.
+
+		$almacen_de_frutas_v3 = ["DURAZNO"];
+
+		$almacen_de_frutas_v3[1] = ["UVAS"]; // Se puede agregar valores directamente indicanco el indice.
+		$almacen_de_frutas_v3[3] = ["KIWI"]; // Incluso se puede saltear indices.
+
+		#echo $almacen_de_frutas_v3[2] . "<br>"; // Tratar de acceder un elemento en un indice no definido dara error.
+
+		function imprimir_almacen($almacen_de_frutas)
+		{
+			echo "<ol>";
+
+			foreach($almacen_de_frutas as $frutas => $tipos) { // Recorrido de un array asociativo.
+
+				echo "<li>FRUTA : " . $frutas . "<ul>";
+
+				for ($i = 0; $i < count($tipos); $i++) {  // Recorrido de un array indexeado.
+					echo "<li>" . $tipos[$i] . "</li>";
+				}
+
+				echo "</ul></li>";
+			}
+
+			echo "</ol>";
+		}
+
+		imprimir_almacen($almacen_de_frutas_V2);
+
+		// ORDENAMIENTO DE ARRAYS.
+
+		// sort() - DE FORMA ASCENDENTE
+		// rsort() - DE FORMA DESCENDENTE
+		// asort() - ASOCIATIVOS -> DE ACUERDO AL VALOR, ASCENDENTE.
+		// ksort() - ASOCIATIVOS -> DE ACUERDO A LA CLAVE, ASCENDENTE.
+		// arsort() - ASOCIATIVOS -> DE ACUERDO AL VALOR, DESCENDENTE.
+		// krsort() - ASOCIATIVOS -> DE ACUERDO A LA CLAVE, DESCENDENTE.
+
+		ksort($almacen_de_frutas_V2);
+		imprimir_almacen($almacen_de_frutas_V2);
+
+		arsort($almacen_de_frutas_V2);
+		imprimir_almacen($almacen_de_frutas_V2); // En caso de ordenar array contra array, cuenta la cantidad de variables.
 
 		?>
 
