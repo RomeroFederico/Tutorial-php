@@ -159,12 +159,22 @@
 
 		fclose($mi_archivo);
 
-		$nuevo_archivo = fopen("archivo_creado_por_php.txt", "w");
+		$nuevo_archivo = fopen("archivo_creado_por_php.txt", "w"); # Abro para solo escritura, si no existe un archivo lo creo.
+																   #  Si el archivo existe, lo deja en blanco.
 
-		fwrite($nuevo_archivo, "Linea agregada por php 1\n");
-		fwrite($nuevo_archivo, "Linea agregada por php 2\n");
+		// fwrite(archivo, string) -> Escribe sobre un archivo segun donde se encuentre el puntero, luego lo mueve al final de lo insertado.
+
+		fwrite($nuevo_archivo, "Linea agregada por php 1\n"); # Agrego un string y se corre el puntero.
+		fwrite($nuevo_archivo, "Linea agregada por php 2\n"); # Agrego otro string al lado del anterior.
 
 		fclose($nuevo_archivo);
+
+		$nuevo_archivo_append = fopen("archivo_creado_y_modificado_por_php.txt", "a"); # A diferencia del modo 'w', 'append' no deja en blanco 
+																					   # al abrir un archivo ya existente.
+
+		fwrite($nuevo_archivo_append, "Linea agregada a la hora : " . date($formato_fecha_extendido) . "\n");
+
+		fclose($nuevo_archivo_append);
 
 		?>
 

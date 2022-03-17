@@ -75,6 +75,7 @@ input {
 .spanWeb,
 .spanGenero,
 .seleccionGenero,
+.spanSubir,
 input {
 	width: 200px;
 }
@@ -86,6 +87,10 @@ h3 {
 
 textarea {
   resize: none;
+}
+
+.formSubir * {
+	width: 200px;
 }
 
 .myButton {
