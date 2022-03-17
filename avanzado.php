@@ -93,10 +93,78 @@
 
 		// require "ruta_del_archivo";
 
-		require "funciones.php";
-		require "componente.php";
+		require "funciones.php"; # Importo funciones, directamente las puedo invocar en este archivo.
+		require "componente.php"; # Importo un bloque de codigo que "imprime" diversos tags html.
+		require "variables.php"; # Importo variables listas para utilizarse.
 
 		saludar();
+
+		echo $variable_importada . "<br>";
+		echo $numero_importado . "<br>";
+
+		// ------------------------------------------------------------
+
+		// Manejo de archivos
+
+		// readfile(ruta) -> Lee un archivo y lo escribe al 'buffer'. Retorna el numero de bytes leidos en caso de suceso.
+
+		echo readfile("texto.txt") . "<br>"; # Imprime el archivo concatenado con el tamaño del mismo.
+
+		readfile("texto.txt"); # Imprimo solo el archivo.
+
+		echo "<br>";
+
+		// fopen(ruta, modo) -> Ofrece mas opciones que el metodo anterior. Retorna el "puntero" del archivo en caso de exito y false en caso contrario.
+
+		// MODOS DE APERTURA
+		// 'r'	SOLO LECTURA -- PUNTERO AL COMIENZO DEL ARCHIVO
+		// 'r+'	LECTURA Y ESCRITURA -- PUNTERO AL COMIENZO DEL ARCHIVO
+		// 'w'	SOLO ESCRITURA -- PUNTERO AL COMIENZO DEL ARCHIVO -- BORRA EL CONTENIDO DEL ARCHIVO -- CREA UN ARCHIVO SI NO EXISTE
+		// 'w+'	LECTURA Y ESCRITURA -- PUNTERO AL COMIENZO DEL ARCHIVO -- BORRA EL CONTENIDO DEL ARCHIVO -- CREA UN ARCHIVO SI NO EXISTE
+		// 'a'	SOLO ESCRITURA -- PUNTERO AL FINAL DEL ARCHIVO -- CREA UN ARCHIVO SI NO EXISTE.
+		// 'a+'	LECTURA Y ESCRITURA -- PUNTERO AL FINAL DEL ARCHIVO -- CREA UN ARCHIVO SI NO EXISTE.
+		// 'x'	SOLO ESCRITURA -- CREA UN ARCHIVO NUEVO -- LANZA ERROR Y FALSE SI YA EXISTE.
+		// 'x+'	LECTURA Y ESCRITURA -- CREA UN ARCHIVO NUEVO -- LANZA ERROR Y FALSE SI YA EXISTE.
+
+
+		// $mi_archivo_imaginario = fopen("archivo_imaginario.txt", "r") or die("No se pudo abrir el archivo.");
+		// Si falla en abrir, se lanza un warning y retorna false.
+		// die(mensaje) o exit(mensaje) finalizan el script de manera abrupta y lanzan el mensaje inidicado. 
+
+		$mi_archivo = fopen("texto.txt", "r") or die("ERROR");		# Apertura del archivo en modo "solo lectura".
+		echo fread($mi_archivo, filesize("texto.txt")) . "<br>";	# Leo el archivo.
+		fclose($mi_archivo);										# Cierre del archivo.
+
+		// fread(archivo, tamaño_a_leer) -> Lee un archivo abierto por 'fopen', leyendose tantos bytes como se especifique.
+		// filesize(ruta) -> Retorna el tamaño en bytes del archivo en la ruta especificada, false en caso de error.
+		// fclose(archivo) -> Cierra un archivo abierto.
+
+		$mi_archivo = fopen("texto.txt", "r") or die("ERROR");
+
+		// fgets(archivo) -> Lee solo la primera linea marcada por el puntero del archivo y corre el puntero a la proxima linea.
+		// echo fgets($mi_archivo) . "<br>"; # Imprimo la primera linea del archivo.
+		// echo fgets($mi_archivo) . "<br>"; # El puntero se corrio una linea, por lo que leo la segunda linea.
+
+		// fgetc(archivo) -> Lee solo el primer caracter marcado por el puntero del archivo y corre el puntero al proximo caracter.
+
+		// feof(archivo) -> retorna true si el puntero del archivo alcanzo el final del mismo (EOF).
+
+		do {
+
+			//echo fgets($mi_archivo) . "<br>"; # Imprimo una linea del archivo de acuerdo a la posicion del puntero.
+			echo fgetc($mi_archivo); # Imprime un unico caracter y corre el puntero al siguiente.
+
+		}
+		while (!feof($mi_archivo)); # Se imprimira hasta que se alcanze el final del archivo.
+
+		fclose($mi_archivo);
+
+		$nuevo_archivo = fopen("archivo_creado_por_php.txt", "w");
+
+		fwrite($nuevo_archivo, "Linea agregada por php 1\n");
+		fwrite($nuevo_archivo, "Linea agregada por php 2\n");
+
+		fclose($nuevo_archivo);
 
 		?>
 
