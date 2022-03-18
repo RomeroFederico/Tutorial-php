@@ -1,3 +1,13 @@
+<?php
+
+$crear_cookie = setcookie("galletita", 'hola soy una galletita', strtotime("+1 month"), "/");
+# $crear_cookie = setcookie("galletita", 'hola soy una galletita', time() - 3600, "/"); # Eliminar una cookie.
+
+$sesion = session_start(); # Comienza una sesion, permitiendo almacenar variables de sesion y poder verlas y modificarlas.
+				 		   # Tambien continua una sesion si ya se ha abierto anteriormente.
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -175,6 +185,61 @@
 		fwrite($nuevo_archivo_append, "Linea agregada a la hora : " . date($formato_fecha_extendido) . "\n");
 
 		fclose($nuevo_archivo_append);
+
+		echo "<br>";
+
+		// ------------------------------------------------------------
+
+		// Cookies
+		// Usualmente utilizados para identificar usuarios. Producidos por el servidor, se depositan en el lado del cliente, y cada vez
+		// que el usuario haga un pedido a una pagina el navegador enviara estas (HEADER). PHP puede crear y leer sus valores.
+
+		// setcookie(nombre, valor, tiempo_de_expiracion, ruta, subdominio, seguridad, httponly) -> Crea una cookie
+		# valor => Debe ser un string, en caso de querer almacenar objetos utilizar JSON.
+		#		   El valor es automaticamente convertido a url (urlencoded). setrawcookie() se utiliza para guardar valores sin convertir. 
+		# tiempo_de_expiracion => Una fecha (UNIX TIMESTAMP).
+		# ruta => '/' (DEFAULT) permitira que la cookie sea visible en todo el dominio, si no se puede especificar un directorio en especifico.
+		# subdominio => En el que estara disponible. (ejemplo.com) dominio >=> subdominio (w2.www.ejemplo.com). Default todo el dominio.
+		# seguridad => true si solo se enviara en redes seguras (PROTOCOLO HTTPS).
+		# httpsonly => true si solo puede ser accesible a traves del protocolo HTTPS. JS no puede manipularlas.
+
+		# $crear_cookie = setcookie("galletita", 'hola soy una galletita', strtotime("+1 month"), "/"); # En caso de falla retorna false.
+		# Notese que esto se debe realizar al comienzo de la pagina antes de los tags html y de que se imprimia cualquier cosa por motivos
+		# de seguridad.
+		# Si la cookie ya existe, se sobreescribe.
+
+		if ($crear_cookie)
+			echo "Se ha creado una cookie.<br>";
+		else
+			echo "No se ha podido crear una cookie.<br>";
+
+		if (isset($_COOKIE['galletita'])) {
+			echo "La cookie se ha almacenado!<br>";
+			echo "valor: " . $_COOKIE['galletita'] . "<br>";
+		}
+		else
+			echo "La cookie no se pudo almacenar<br>";
+
+		// Cabe destacar que aun si la funcion cumple su cometido (true), que la cookie se aloje en el lado del cliente dependera de que el usuario
+		// la acepte.
+
+		// Si se desea eliminarla, se crea una pero con una fecha pasada.
+
+		// ------------------------------------------------------------
+
+		// Sesiones
+		// Permite almacenar informacion para ser usada en multiples paginas. Al contrario que las cookies, no se almacenan en el lado del cliente.
+		// Contienen la informacion de un usuario. Generalmente duran hasta que el usuario cierra el navegador.
+
+		# session_start(); # Comienza/continua la sesion. Debe ser incluido al inicio del documento. Retorna true en caso de exito.
+
+		if ($sesion)
+			echo "Se ha iniciado sesion.<br>";
+		else
+			die("No se ha podido iniciar sesion.<br>");
+
+		$_SESSION['saludo']  = "Hola mundo!!!";
+		$_SESSION['fecha_creacion'] = date($formato_fecha_extendido);
 
 		?>
 
