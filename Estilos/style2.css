@@ -1,0 +1,97 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.noMostrar {
+	display: none;
+}
+
+.miFuente {
+	font-family: monospace;
+	font-weight: 700;
+	font-size: 15px;
+	color: white;
+}
+
+.centrar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.vertical {
+	flex-direction: column;
+}
+
+.divContenedorPrincipal {
+	min-height: 100vh;
+	background-color: #1d2a35;
+
+	align-items: flex-start;
+}
+
+.divCodigo {
+
+	min-height: 30px;
+	width: 500px;
+
+	background-color: lightgreen;
+	border-right: solid 2px rgba(0, 0, 0, 0.5);
+	border-bottom: solid 2px rgba(0, 0, 0, 0.5);
+
+	margin: 20px;
+
+	color: darkgreen;
+
+	align-self: center;
+}
+
+.infoGeneral {
+	width: 560px;
+	min-height: 100px;
+	background-color: #282A35;
+	border: solid 1px white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+	margin: 50px 20px 40px 20px;
+
+	padding: 20px;
+
+	align-items: flex-start;
+}
+
+.infoFiltro {
+	width: 560px;
+	min-height: 100px;
+	background-color: #282A35;
+	border: solid 1px white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+	margin: 0px 20px 50px 20px;
+
+	padding: 20px;
+}
+
+.divMenu {
+	min-width: 200px;
+	background-color: #282A35;
+	border: solid 1px white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+	margin: 50px 20px 50px 20px;
+}
+
+.divMenu ul {
+	margin: 20px 40px 20px 20px;
+}
+
+ul li:hover {
+	cursor: pointer;
+	color: crimson;
+}
+
+.iluminar {
+	color: crimson;
+}
+
+.titulo {
+	padding-left: 10px;
+}
