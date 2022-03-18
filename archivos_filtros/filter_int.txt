@@ -1,0 +1,11 @@
+<span class = 'colorClave'><b>FILTER_VALIDATE_INT</b></span><br><br>
+Valida el valor a <i>integer</i>, opcionalmente en un rango especificado, y lo conviere/retorna a <i>int</i> en caso de exito.<br>
+<span class = 'colorClave'>NOTA:</span> En caso de validar el valor 0, el valor retornado es <span class = 'colorClave'><b>0 == FALSE!!!</b></span><br><br>
+<b>OPCIONES</b><br>
+<i>default</i>: En caso de no poder validar, retorna este valor.<br>
+<i>min_range</i>: Aplica una validacion extra con un rango minimo (EXCLUSIVO).<br>
+<i>max_range</i>: Aplica una validacion extra con un rango maximo (EXCLUSIVO).<br><br>
+<b>BANDERAS</b><br>
+<i>FILTER_FLAG_ALLOW_OCTAL</i>: Permite valores octales  (base 8).
+<i>FILTER_FLAG_ALLOW_HEX</i>: Permite valores hexadecimales  (base 16).
+<i>FILTER_NULL_ON_FAILURE</i>: false es retornado solo para <i>"0", "false, "off", "no", y ""</i>, y <i>null</i> es retornado para todos los valores no booleanos.

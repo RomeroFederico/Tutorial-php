@@ -7,9 +7,29 @@ body {
 	display: none;
 }
 
+.colorFuncion {
+	color: hsl(190, 81%, 67%);
+}
+
+.colorVariable {
+	color: hsl(60, 36%, 96%);
+}
+
+.colorString {
+	color: hsl(54, 70%, 68%);
+}
+
+.colorClave {
+	color: hsl(338, 95%, 56%);
+}
+
+.colorExtra {
+	color: hsl(261, 100%, 75%);
+}
+
 .miFuente {
 	font-family: monospace;
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 15px;
 	color: white;
 }
@@ -24,6 +44,13 @@ body {
 	flex-direction: column;
 }
 
+.vertical-left {
+	flex-direction: column;
+	align-items: flex-start;
+
+	padding: 10px 20px 10px 20px;
+}
+
 .divContenedorPrincipal {
 	min-height: 100vh;
 	background-color: #1d2a35;
@@ -34,15 +61,15 @@ body {
 .divCodigo {
 
 	min-height: 30px;
-	width: 500px;
+	box-sizing: border-box;
+	width: 100%;
 
-	background-color: lightgreen;
-	border-right: solid 2px rgba(0, 0, 0, 0.5);
-	border-bottom: solid 2px rgba(0, 0, 0, 0.5);
+	background-color: rgb(21,32,43);
+	border-left: solid 3px rgba(0, 0, 0, 0.3);
 
 	margin: 20px;
 
-	color: darkgreen;
+	color: white;
 
 	align-self: center;
 }
