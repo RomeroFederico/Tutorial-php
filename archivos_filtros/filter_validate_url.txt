@@ -1,1 +1,11 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_URL</b></span><br><br>
+Valida el valor como una <a href="http://www.faqs.org/rfcs/rfc2396.html"><i>URL</i></a>, opcionalmente con componentes requeridos. Devuelve la <i>URL</i> en caso de exito, <i>false</i> si falla.<br>
+<span class = 'colorClave'> NOTA:</span> Una <i>URL</i> valida puede no especificar que contenga el protocolo <i>HTTPS</i>. Ademas, solo valida basandose en <i>URLs ASCII</i>.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>: En caso de no poder validar, retorna este valor.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_SCHEME_REQUIRED</i>: El valor debe contener una <i>scheme/protocolo</i> (<i>'https'</i>).<br>
+<i class = "colorSubtitulo">FILTER_FLAG_HOST_REQUIRED</i>&nbsp;&nbsp;: El valor debe contener un <i>host/dominio</i> (<i>'localhost'</i>).<br>
+<i class = "colorSubtitulo">FILTER_FLAG_PATH_REQUIRED</i>&nbsp;&nbsp;: El valor debe contener un <i>path/ruta</i> (<i>'buscar'</i>).<br>
+<i class = "colorSubtitulo">FILTER_FLAG_QUERY_REQUIRED</i>&nbsp;: El valor debe contener una <i>query/consulta</i> (<i>'view=detail'</i>).<br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Retorna <i>null</i> en caso de no poder validar.<b

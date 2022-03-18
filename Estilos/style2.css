@@ -27,6 +27,10 @@ body {
 	color: hsl(261, 100%, 75%);
 }
 
+.colorSubtitulo {
+	color: yellowgreen;
+}
+
 .miFuente {
 	font-family: monospace;
 	font-weight: 500;
@@ -75,7 +79,7 @@ body {
 }
 
 .infoGeneral {
-	width: 560px;
+	width: 800px;
 	min-height: 100px;
 	background-color: #282A35;
 	border: solid 1px white;
@@ -88,7 +92,7 @@ body {
 }
 
 .infoFiltro {
-	width: 560px;
+	width: 800px;
 	min-height: 100px;
 	background-color: #282A35;
 	border: solid 1px white;

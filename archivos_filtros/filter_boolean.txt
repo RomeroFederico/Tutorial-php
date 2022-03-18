@@ -1,1 +1,6 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_BOOLEAN</b></span><br><br>
+Valida el valor a <i>boolean</i>, retornando <i>true</i> para <i>"1", "true", "on" y "yes"</i>. En caso contrario retornara <i>false</i>.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>: En caso de no poder validar, retorna este valor.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>: <i>false</i> es retornado solo para <i>"0", "false, "off", "no", y ""</i>, y <i>null</i> es retornado para todos los valores no booleanos.<br>

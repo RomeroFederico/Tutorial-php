@@ -66,7 +66,7 @@
 		echo "<div class = 'centrar vertical'>";
 
 		echo "<div class = 'infoGeneral centrar vertical'>";
-		echo "<span class = 'miFuente'>El metodo '<i>filter_var()</i>' tanto valida como sanitiza los datos.</span>";
+		echo "<span class = 'miFuente'>El metodo '<i>filter_var()</i>' tanto valida como sanitiza los datos. Retorna <i>false</i> en caso de fallar.</span>";
 		echo "<div class = 'divCodigo miFuente centrar'>";
 		echo "<span class = 'colorFuncion'>filter_var(<span class = 'colorVariable'>"; 
 		echo chr(36) . "VARIABLE</span>, <span class = 'colorClave'>FILTRO</span>, ";
@@ -77,7 +77,7 @@
 		echo "<span class = 'miFuente'><i>OPCIONES</i> => (opcional) Array asociativo con diversas opciones.</span>";
 		echo "<span class = 'miFuente'><i>BANDERA</i> &nbsp;=> (opcional) Modifica la funcionalidad del metodo.</span>";
 
-		echo "<div class = 'divCodigo mi miFuente centrar vertical-left'>";
+		echo "<div class = 'divCodigo miFuente centrar vertical-left'>";
 		echo "<span class = ''>" . chr(36) . "OPCIONES <span class = 'colorClave'>=</span> <span class = 'colorFuncion'>array</span>( </span>";
 		echo "<span class = ''>&nbsp;&nbsp;&nbsp;<span class = 'colorString'>'options'</span> <span class = 'colorClave'>=></span> <span class = 'colorFuncion'>array</span>( </span>";
 		echo "<span class = ''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = 'colorString'>'default'</span> <span class = 'colorClave'>=></span> <span class = 'colorExtra'><i>valor</i></span>,</span>";
@@ -88,14 +88,14 @@
 		echo "</div>";
 		echo "</div>";
 
-		echo "<div class = 'infoFiltro centrar'>";
+		echo "<div class = 'infoFiltro centrar vertical'>";
 		echo 	"<span id = 'spanNoSeleccion' class = 'miFuente noMostrar'>Seleccione un filtro del menu...</span>";
 
 		foreach ($nombres_filtros as $idFiltro => $nombre_filtro) {
 
 			echo 	"<div id = 'divFiltroSeleccionado_" . $idFiltro . "' class = 'miFuente'>";
 			echo 		abrir_y_retornar_archivo($nombre_filtro);
-			echo 	"</div>";
+			echo 	"</div><br>";
 
 		}
 

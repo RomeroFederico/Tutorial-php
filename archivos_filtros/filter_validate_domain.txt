@@ -1,1 +1,7 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_DOMAIN</b></span><br><br>
+Valida que el nombre de los labels de dominio tengan un largo valido. Valida los nombres de domino contra <i>RFC 1034, RFC 1035, RFC 952, RFC 1123, RFC 2732, RFC 2181, y RFC 1123</i>. En caso de acierto retorna el valor, y <i>false</i> en caso de fallo.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>: En caso de no poder validar, retorna este valor.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_HOSTNAME</i>&nbsp;&nbsp;: Agrega la habilidad de validar <i>hostnames</i> especificamente (deben comenzar con un caracter alfanumerico y solo pueden contar con estos caracteres o guion en el resto del nombre).<br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>: Retorna <i>null</i> en caso de no poder validar.<br>

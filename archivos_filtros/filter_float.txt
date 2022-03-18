@@ -1,1 +1,11 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_FLOAT</b></span><br><br>
+Valida el valor a <i>float</i>, opcionalmente en un rango especificado, y lo conviere/retorna a <i>float</i> en caso de exito.<br>
+<span class = 'colorClave'>NOTA:</span> En caso de validar el valor 0, el valor retornado es <span class = 'colorClave'><b>0 == FALSE!!!</b></span><br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>&nbsp;&nbsp;: En caso de no poder validar, retorna este valor.<br>
+<i class = "colorString">decimal</i>&nbsp;&nbsp;: Permite cambiar la notacion decimal ('.' o ',').<br>
+<i class = "colorString">min_range</i>: Aplica una validacion extra con un rango minimo (EXC).<br>
+<i class = "colorString">max_range</i>: Aplica una validacion extra con un rango maximo (EXC).<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_ALLOW_THOUSAND</i>: Permite (,) como separador de miles.<br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>&nbsp;&nbsp;&nbsp;&nbsp;: Retorna <i>null</i> en caso de no poder validar.<br>
