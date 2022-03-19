@@ -1,1 +1,2 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_SANITIZE_EMAIL</b></span><br><br>
+Remueve todos los caracteres con excepcion de las letras, digitos y <i class = "colorString">!#$%&'*+-=?^_`{|}~@.[].</i>. Retorna el email filtrado.<br>

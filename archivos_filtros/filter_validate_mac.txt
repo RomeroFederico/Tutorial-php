@@ -1,1 +1,6 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_MAC</b></span><br><br>
+Valida el valor como una direccion <i>MAC</i>, retornando la misma si tiene exito y <i>false</i> en caso contrario.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>: En caso de no poder validar, retorna este valor.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>: Retorna <i>null</i> en caso de no poder validar.<br>

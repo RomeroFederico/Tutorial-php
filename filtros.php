@@ -89,13 +89,13 @@
 		echo "</div>";
 
 		echo "<div class = 'infoFiltro centrar vertical'>";
-		echo 	"<span id = 'spanNoSeleccion' class = 'miFuente noMostrar'>Seleccione un filtro del menu...</span>";
+		echo 	"<span id = 'spanNoSeleccion' class = 'miFuente'>Seleccione un filtro del menu...</span>";
 
 		foreach ($nombres_filtros as $idFiltro => $nombre_filtro) {
 
-			echo 	"<div id = 'divFiltroSeleccionado_" . $idFiltro . "' class = 'miFuente'>";
+			echo 	"<div id = 'divFiltroSeleccionado_" . $idFiltro . "' class = 'miFuente noMostrar divFiltro'>";
 			echo 		abrir_y_retornar_archivo($nombre_filtro);
-			echo 	"</div><br>";
+			echo 	"</div>";
 
 		}
 
@@ -127,12 +127,29 @@
 			}
 		}
 
+		function clear_filtros() {
+			var filtros = obtener_filtros();
+
+			for (var i = 0; i < filtros.length; i++) {
+				filtros[i].classList.add("noMostrar");
+			}
+		}
+
+		function obtener_filtros() {
+			return document.getElementsByClassName("divFiltro");
+		}
+
 		function escribir(id) {
+			
 			var span = document.getElementById("spanNoSeleccion");
-			var div = document.getElementById("divFiltroSeleccionado");
 			span.classList.add("noMostrar");
-			div.classList.remove("noMostrar");
-			div.innerHTML = "Hola soy el filtro " + id;
+
+			clear_filtros();
+
+			var filtro = document.getElementById("divFiltroSeleccionado_" + id);
+			filtro.classList.remove("noMostrar");
+
+			seleccion = id;
 		}
 		
 		function seleccionar_del_menu(id) {

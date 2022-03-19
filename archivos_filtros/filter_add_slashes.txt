@@ -1,1 +1,2 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_SANITIZE_ADD_SLASHES</b></span><br><br>
+Aplica <i class = "colorFuncion">addslashes()</i>, retornando un string con <i class = "colorString">\</i> insertados antes de los caracteres que necesitan ser escapados. Estos caracteres son: comilla simple (<i class = "colorString">'</i>), comilla doble (<i class = "colorString">"</i>), barra invertida (<i class = "colorString">\</i>) y <i class = "colorString">NUL</i> (el byte <i class = "colorString">NUL</i>).<br>

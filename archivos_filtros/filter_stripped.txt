@@ -1,1 +1,10 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_SANITIZE_STRIPPED</b></span><br><br>
+Es un alias de <i>FILTER_SANITIZE_STRING</i>. Limpia los tags y las comillas doble y simple <i>HTML-encode</i>. Opcionalmente tambien elimina o encodea los caracteres especiales. Devuelve el string saneado.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_NO_ENCODE_QUOTES</i>: Las comillas dobles y simples no seran encodeadas.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_STRIP_LOW</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Limpia todos los caracteres con un valor <32.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_STRIP_HIGH</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Limpia todos los caracteres con un valor >127.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_STRIP_BACKTICK</i>&nbsp;&nbsp;: Limpia todos los caracteres '`'.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_ENCODE_LOW</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Encodea todos los caracteres con un valor <32.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_ENCODE_HIGH</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Encodea todos los caracteres con un valor >127.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_ENCODE_AMP</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Encodea los ampersands (&).<br>

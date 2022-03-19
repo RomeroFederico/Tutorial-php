@@ -1,1 +1,6 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_CALLBACK</b></span><br><br>
+Llama a la funcion definida (<span class = 'colorFuncion'>CB</span>) para filtrar los datos provistos. El retorno dependera de la misma.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">Nombre de la funcion</i>: La funcion provista (<span class = 'colorFuncion'>CB</span>) para filtrar.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorClave">TODAS LAS BANDERAS SON IGNORADAS.</i><br>

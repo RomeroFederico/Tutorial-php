@@ -1,1 +1,2 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_SANITIZE_NUMBER_INT</b></span><br><br>
+Remueve todos los caracteres con excepcion de los digitos y <i class = "colorString">+-</i>. Retorna el entero filtrado.<br>

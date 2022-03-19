@@ -1,1 +1,4 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_SANITIZE_FULL_SPECIAL_CHARS</b></span><br><br>
+Equivalente a llamar a <i class = "colorFuncion">htmlspecialchars()</i> con <i>ENT_QUOTES</i> establecido. Las comillas de codificación pueden ser desactivadas mediante el establecimiento de <i>FILTER_FLAG_NO_ENCODE_QUOTES</i>. Al igual que <i class = "colorFuncion">htmlspecialchars()</i>, este filtro tiene en cuenta el <i>default_charset</i> y si en una secuencia de bytes se detecta que contiene un carácter no válido en el conjunto de caracteres actual entonces el string completo es rechazado lo que resulta en un string de longitud 0.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_NO_ENCODE_QUOTES</i>: Las comillas dobles y simples no seran encodeadas.<br>

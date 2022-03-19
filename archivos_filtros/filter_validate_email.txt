@@ -1,1 +1,7 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_EMAIL</b></span><br><br>
+Valida si el valor provisto corresponde a un email valido, ejecutando la comprobacion con el protocolo <i>addr-specsyntax</i> en <a href="http://www.faqs.org/rfcs/rfc822"><i>RFC 822</i></a>. Retorna el email en caso de exito, 'false' si no.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>: En caso de no poder validar, retorna este valor.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_EMAIL_UNICODE</i>: Permite que la parte local del email contenga caracteres <i>Unicode</i>.<br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>&nbsp;&nbsp;&nbsp;: Retorna <i>null</i> en caso de no poder validar.<br>

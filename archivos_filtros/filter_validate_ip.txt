@@ -1,1 +1,10 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_VALIDATE_IP</b></span><br><br>
+Valida el valor como una <i>IP</i> valida, pudiendo aplicar comprobaciones extra. Devuelve la <i>IP</i> en caso de exito, <i>false</i> si falla.<br><br>
+<b>OPCIONES</b><br>
+<i class = "colorString">default</i>: En caso de no poder validar, retorna este valor.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_IPV4</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Permite que el valor contenga el formato <i>IPv4</i>.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_IPV6</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Permite que el valor contenga el formato <i>IPv6</i>.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_NO_PRIV_RANGE</i>: La validacion fallara para los rangos <i>IPv4</i> privados: 10.0.0.0/8, 172.16.0.0/12 y 192.168.0.0/16. Tambien lo hara para las direcciones <i>IPv6</i> que comienzan con <i>'FD'</i> o <i>'FC'</i>.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_NO_RES_RANGE</i>&nbsp;: La validacion fallara para los rangos <i>IPv4</i> reservados: 0.0.0.0/8, 169.254.0.0/16, 127.0.0.0/8 y 240.0.0.0/4. Tambien lo hara para los rangos <i>IPv6</i> reservados: ::1/128, ::/128, ::ffff:0:0/96 y fe80::/10. Estos son los rangos que estan marcados como <i>Reserved-By-Protocol</i> en <a href="http://www.faqs.org/rfcs/rfc6890"><i>RFC 6890</i></a>.<br>
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>&nbsp;&nbsp;&nbsp;: Retorna <i>null</i> en caso de no poder validar.<br>

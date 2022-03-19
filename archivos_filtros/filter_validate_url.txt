@@ -8,4 +8,4 @@ Valida el valor como una <a href="http://www.faqs.org/rfcs/rfc2396.html"><i>URL<
 <i class = "colorSubtitulo">FILTER_FLAG_HOST_REQUIRED</i>&nbsp;&nbsp;: El valor debe contener un <i>host/dominio</i> (<i>'localhost'</i>).<br>
 <i class = "colorSubtitulo">FILTER_FLAG_PATH_REQUIRED</i>&nbsp;&nbsp;: El valor debe contener un <i>path/ruta</i> (<i>'buscar'</i>).<br>
 <i class = "colorSubtitulo">FILTER_FLAG_QUERY_REQUIRED</i>&nbsp;: El valor debe contener una <i>query/consulta</i> (<i>'view=detail'</i>).<br>
-<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Retorna <i>null</i> en caso de no poder validar.<b
+<i class = "colorSubtitulo">FILTER_NULL_ON_FAILURE</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Retorna <i>null</i> en caso de no poder validar.<br>

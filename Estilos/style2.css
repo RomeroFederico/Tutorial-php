@@ -3,6 +3,11 @@ body {
 	margin: 0;
 }
 
+#spanNoSeleccion {
+	align-self: center;
+	justify-self: center;
+}
+
 .noMostrar {
 	display: none;
 }
@@ -100,6 +105,8 @@ body {
 	margin: 0px 20px 50px 20px;
 
 	padding: 20px;
+
+	align-items: flex-start;
 }
 
 .divMenu {
@@ -125,4 +132,9 @@ ul li:hover {
 
 .titulo {
 	padding-left: 10px;
+}
+
+a {
+	color: hsl(190, 81%, 67%);
+	text-decoration-line: none;
 }

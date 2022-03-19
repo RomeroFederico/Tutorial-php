@@ -1,1 +1,6 @@
-<b></b>
+<span class = 'colorClave'><b>FILTER_SANITIZE_NUMBER_FLOAT</b></span><br><br>
+Remueve todos los caracteres con excepcion de los digitos y <i class = "colorString">+-</i> y, opcionalmente, <i class = "colorString">.,eE</i>. Retorna el flotante filtrado.<br><br>
+<b>BANDERAS</b><br>
+<i class = "colorSubtitulo">FILTER_FLAG_ALLOW_FRACTION</i>&nbsp;&nbsp;: Permite (.) como separador fraccional.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_ALLOW_THOUSAND</i>&nbsp;&nbsp;: Permite (,) como separador de miles.<br>
+<i class = "colorSubtitulo">FILTER_FLAG_ALLOW_SCIENTIFIC</i>: Permite (e) o (E) como notacion cientifica.<br>
